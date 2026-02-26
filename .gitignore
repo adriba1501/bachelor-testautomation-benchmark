@@ -1,0 +1,14 @@
+# Virtuelle Umgebung
+.venv/
+venv/
+
+# Pycharm / IDE
+.idea/
+__pycache__/
+
+# Python spezifisch
+*.pyc
+
+# Messergebnisse (CSV) die wir später generieren
+results/
+*.csv
