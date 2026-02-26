@@ -1,3 +1,6 @@
+import self
+
+
 class PracticePage:
     def __init__(self, page):
         self.page = page
@@ -14,9 +17,7 @@ class PracticePage:
         self.checkbox2 = "input[id='checkBoxOption2']"
 
         # Szenarion 2: Dropdown
-        self.dropdown1 = "option[value='option1']"
-        self.dropdown2 = "option[value='option2']"
-        self.dropdown3 = "option[value='option3']"
+        self.dropdown_box = "select[id='dropdown-class-example']"
 
         # Szenario 2: Text Input
         self.text_input = "input[id='autocomplete']"
@@ -24,3 +25,25 @@ class PracticePage:
         #Szenario 3: Web Table Location
         self.table_course_3 =  "table[name='courses'] tr:nth-child(3) td:nth-child(2)"
         self.table_price_3 = "table[name='courses'] tr:nth-child(3) td:nth-child(3)"
+
+    def scenario_1(self):
+        # Radio Buttons von 1 bis 3 durchklicken
+        self.page.locator(self.radio1).click()
+        self.page.locator(self.radio2).click()
+        self.page.locator(self.radio3).click()
+
+        # Checkbox 1 und 2 aktivieren und wieder deaktivieren
+        self.page.locator(self.checkbox1).check()
+        self.page.locator(self.checkbox1).uncheck()
+
+        self.page.locator(self.checkbox2).check()
+        self.page.locator(self.checkbox2).uncheck()
+
+    def scenario_2(self):
+        # Dropdownmenü Option 2 und dann Option 3 anklicken
+        self.page.locator(self.dropdown_box).select_option("option2")
+        self.page.locator(self.dropdown_box).select_option("option3")
+
+        # Text in Textfeld eintragen
+        self.page.locator(self.text_input).fill("Aus")
+        self.page.locator(self.text_input).clear()
