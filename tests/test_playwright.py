@@ -11,9 +11,10 @@ def test_szenario_1(page):
     # 2. PracticePage-Klasse an Browser-Tab übergeben
     practice_page = PracticePage(page)
 
-    # 3. Szenario 1 starten
+    # 3. Szenario 1, 2 starten
     practice_page.scenario_1()
     practice_page.scenario_2()
+    practice_page.scenario_3()
 
     # weil sich das Fenster normal nach nicht mal einer Sekunde schließen würde
     time.sleep(3)

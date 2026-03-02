@@ -47,3 +47,9 @@ class PracticePage:
         # Text in Textfeld eintragen
         self.page.locator(self.text_input).fill("Aus")
         self.page.locator(self.text_input).clear()
+
+    def scenario_3(self):
+        # Webtable auslesen
+        kursname = self.page.locator(self.table_course_3).inner_text()
+        preis = self.page.locator(self.table_price_3).inner_text()
+        assert preis != "", f"Fehler: Der Preis für den Kurs '{kursname}' ist leer!"
