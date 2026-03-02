@@ -1,7 +1,7 @@
 import self
 
 
-class PracticePage:
+class PracticePagePlaywright:
     def __init__(self, page):
         self.page = page
 
@@ -44,7 +44,7 @@ class PracticePage:
         self.page.locator(self.dropdown_box).select_option("option2")
         self.page.locator(self.dropdown_box).select_option("option3")
 
-        # Text in Textfeld eintragen
+        # Text in Textfeld eintragen und wieder löschen
         self.page.locator(self.text_input).fill("Aus")
         self.page.locator(self.text_input).clear()
 

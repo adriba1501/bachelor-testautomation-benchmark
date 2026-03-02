@@ -1,0 +1,28 @@
+import pytest
+from selenium import webdriver
+from pages.practice_page_selenium import PracticePageSelenium
+
+
+@pytest.fixture
+def driver():
+    chrome_driver = webdriver.Chrome()
+    chrome_driver.maximize_window()
+
+    # geben laufenden Browser an Test weiter
+    yield chrome_driver
+
+    # Wenn Test fertig: Schließe Browser
+    chrome_driver.quit()
+
+def test_szenario_1_selenium(driver):
+
+    # Navigation zur Rahul Shetty Seite
+    driver.get("https://rahulshettyacademy.com/AutomationPractice/")
+
+    # Übergeben von laufenden Browser an Selenium-Klasse
+    practice_page = PracticePageSelenium(driver)
+
+    # Alle 3 Szenarien laufen lassen
+    practice_page.scenario_1()
+    practice_page.scenario_2()
+    practice_page.scenario_3()
