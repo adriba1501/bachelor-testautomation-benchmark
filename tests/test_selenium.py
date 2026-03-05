@@ -1,11 +1,15 @@
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from pages.practice_page_selenium import PracticePageSelenium
 
 
 @pytest.fixture
 def driver():
-    chrome_driver = webdriver.Chrome()
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+
+    chrome_driver = webdriver.Chrome(options=chrome_options)
     chrome_driver.maximize_window()
 
     # geben laufenden Browser an Test weiter
