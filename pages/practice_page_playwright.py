@@ -1,6 +1,3 @@
-import self
-
-
 class PracticePagePlaywright:
     def __init__(self, page):
         self.page = page

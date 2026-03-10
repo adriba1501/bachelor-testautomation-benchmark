@@ -18,6 +18,7 @@ def driver():
     # Wenn Test fertig: Schließe Browser
     chrome_driver.quit()
 
+# Szenario 1: Radiobuttons und Checkboxen
 def test_szenario_1_selenium(driver):
 
     # Navigation zur Rahul Shetty Seite
@@ -26,7 +27,27 @@ def test_szenario_1_selenium(driver):
     # Übergeben von laufenden Browser an Selenium-Klasse
     practice_page = PracticePageSelenium(driver)
 
-    # Alle 3 Szenarien laufen lassen
+    # Szenario starten
     practice_page.scenario_1()
+
+# Szenario 2: Dropdowns und Eingabefelder
+def test_szenario_2_selenium(driver):
+    # Navigation zur Rahul Shetty Seite
+    driver.get("https://rahulshettyacademy.com/AutomationPractice/")
+
+    # Übergeben von laufenden Browser an Selenium-Klasse
+    practice_page = PracticePageSelenium(driver)
+
+    # Szenario starten
     practice_page.scenario_2()
+
+# Szenario 3: Webtabelle
+def test_szenario_3_selenium(driver):
+    # Navigation zur Rahul Shetty Seite
+    driver.get("https://rahulshettyacademy.com/AutomationPractice/")
+
+    # Übergeben von laufenden Browser an Selenium-Klasse
+    practice_page = PracticePageSelenium(driver)
+
+    # Szenario starten
     practice_page.scenario_3()
